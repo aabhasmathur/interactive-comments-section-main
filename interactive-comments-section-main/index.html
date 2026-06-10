@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="script.js" defer></script>
+
+    <title>Frontend Mentor | Interactive comments section</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pull dynamic content from the data.json file -->
+    <div class="comment-box">
+      <div class="vote-bar">
+        <button class="plus">
+          <img src="./images/icon-plus.svg" alt="plus icon" />
+        </button>
+        <span class="vote-count">0</span>
+        <button class="minus">
+          <img src="./images/icon-minus.svg" alt="minus icon" />
+        </button>
+      </div>
+      <div>
+        <div class="image-icon-wrapper">
+        <div class="image-title">
+          <img
+            src="./images/avatars/image-amyrobson.png"
+            alt="amy robson avatar"
+            class="icon"
+          />
+          <title>This is a Title.</title>
+        </div>
+         <button class="icon-reply">
+        <img src="./images/icon-reply.svg" alt="you icon" />
+        <p>Reply</p>
+      </button>
+      </div>
+
+        <p>
+         Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+        </p>
+
+        
+      </div>
+     
+      
+    </div>
+
+     <div class="comment-box-self">
+      <div class="vote-bar">
+        <button class="plus">
+          <img src="./images/icon-plus.svg" alt="plus icon" />
+        </button>
+        <span class="vote-count">0</span>
+        <button class="minus">
+          <img src="./images/icon-minus.svg" alt="minus icon" />
+        </button>
+      </div>
+      <div>
+        <div>
+          <div class="image-title">
+          <img
+            src="./images/avatars/image-amyrobson.png"
+            alt="amy robson avatar"
+            class="icon"
+          />
+          <title>This is a Title.</title>
+          </div>
+          <div class="icon-replying">
+          <button class="delete-comment">
+        <img src="./images/icon-delete.svg" alt="you icon" />
+        Delete
+        </button>
+        
+        <button>
+        <img src="./images/icon-edit.svg" alt="you icon" />
+        Edit
+        </button>
+        
+          </div>
+        </div>
+
+       <p>I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.</p>
+      </div>
+     
+      
+    
+    </div>
+
+<div class="replied-box">
+    <div></div>
+    <div class="comment-box">
+      <div class="vote-bar">
+        <button class="plus">
+          <img src="./images/icon-plus.svg" alt="plus icon" />
+        </button>
+        <span class="vote-count">0</span>
+        <button class="minus">
+          <img src="./images/icon-minus.svg" alt="minus icon" />
+        </button>
+      </div>
+      <div>
+        <div class="image-title">
+          <img
+            src="./images/avatars/image-amyrobson.png"
+            alt="amy robson avatar"
+            class="icon"
+          />
+          <title>This is a Title.</title>
+        </div>
+
+        <p>
+          This is a comment.
+          This can come to next line as well.
+        </p>
+      </div>
+      <button class="icon-reply">
+        <img src="./images/icon-reply.svg" alt="you icon" />
+        <p>Reply</p>
+      </button>
+      
+    
+    </div>
+</div>
+
+  <div class="replied-box-self ">
+    <div></div>
+    <div class="comment-box">
+      <div class="vote-bar">
+        <button class="plus">
+          <img src="./images/icon-plus.svg" alt="plus icon" />
+        </button>
+        <span class="vote-count">0</span>
+        <button class="minus">
+          <img src="./images/icon-minus.svg" alt="minus icon" />
+        </button>
+      </div>
+      <div>
+        <div>
+          <div class="image-title">
+          <img
+            src="./images/avatars/image-amyrobson.png"
+            alt="amy robson avatar"
+            class="icon"
+          />
+          <title>This is a Title.</title>
+          </div>
+          <div class="icon-replying">
+          <button class="delete-comment">
+        <img src="./images/icon-delete.svg" alt="you icon" />
+        Delete
+        </button>
+        
+        <button>
+        <img src="./images/icon-edit.svg" alt="you icon" />
+        Edit
+        </button>
+        
+          </div>
+        </div>
+
+       <input  class="reply-box" type="text" placeholder="Add a reply...">
+      </div>
+     
+      
+    
+    </div>
+</div>
+
+  <div class="replied-box-self">
+    <div></div>
+    <div class="comment-box">
+      <div class="vote-bar">
+        <button class="plus">
+          <img src="./images/icon-plus.svg" alt="plus icon" />
+        </button>
+        <span class="vote-count">0</span>
+        <button class="minus">
+          <img src="./images/icon-minus.svg" alt="minus icon" />
+        </button>
+      </div>
+      <div>
+        <div>
+          <div class="image-title">
+          <img
+            src="./images/avatars/image-amyrobson.png"
+            alt="amy robson avatar"
+            class="icon"
+          />
+          <title>This is a Title.</title>
+          </div>
+          <div class="icon-replying">
+          <button class="delete-comment">
+        <img src="./images/icon-delete.svg" alt="you icon" />
+        Delete
+        </button>
+        
+        <button>
+        <img src="./images/icon-edit.svg" alt="you icon" />
+        Edit
+        </button>
+        
+          </div>
+        </div>
+
+       <p>I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.</p>
+      </div>
+     
+      
+    
+    </div>
+</div>
+
+<div class="modal">
+
+  <div class="modal-content">
+    <h4>Delete comment</h4>
+    <p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+    <div class="modal-buttons">
+      <button class="cancel-button">NO, CANCEL</button>
+      <button class="delete-button">YES, DELETE</button>
+  </div>
+
+</div>
+  </body>
+</html>
