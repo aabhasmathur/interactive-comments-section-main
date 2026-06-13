@@ -3,32 +3,48 @@ document.querySelector(".cancel-button").addEventListener("click", function () {
 });
 
 document.querySelectorAll(".delete-comment").forEach((button, index) => {
-    button.addEventListener("click", function () {
+  console.log(index);
+  button.addEventListener("click", function () {
         document.querySelector(".modal").style.display = "block";
         button.closest(".comment-box-self, .replied-box-self").dataset.index = index;
         document.querySelector(".delete-button").dataset.index = index;
     });
 });
 
-document.querySelectorAll(".plus").forEach((button, index) => {
-  button.addEventListener("click", () => {
+
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.delete-comment')) {
+        document.querySelector(".modal").style.display = "block";
+        console.log(e.target.dataset.index);
+        e.target.closest(".comment-box-self, .replied-box-self").dataset.index = e.target.dataset.index;
+        document.querySelector(".delete-button").dataset.index = e.target.dataset.index;
+  }
+});
+
+document.querySelectorAll(".plus").forEach((button) => {
+  button.addEventListener("click", (event) => {
+     const currentElements = Array.from(document.querySelectorAll('.plus')); // These are used because of closures concept of JS is causing last used variable value to be stored there
+    const currentIndex = currentElements.indexOf(event.currentTarget); // These are used because of closures concept of JS is causing last used variable value to be stored there
     let voteCount = parseInt(
-      document.querySelectorAll(".vote-count")[index].textContent,
+      document.querySelectorAll(".vote-count")[currentIndex].textContent,
     );
     voteCount++;
-    document.querySelectorAll(".vote-count")[index].textContent = voteCount;
+    document.querySelectorAll(".vote-count")[currentIndex].textContent = voteCount;
   });
 });
 
-document.querySelectorAll(".minus").forEach((button, index) => {
-  button.addEventListener("click", () => {
+
+document.querySelectorAll(".minus").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const currentElements = Array.from(document.querySelectorAll('.minus'));
+    const currentIndex = currentElements.indexOf(event.currentTarget);
     let voteCount = parseInt(
-      document.querySelectorAll(".vote-count")[index].textContent,
+      document.querySelectorAll(".vote-count")[currentIndex].textContent,
     );
     if (voteCount > 0) {
       voteCount--;
     }
-    document.querySelectorAll(".vote-count")[index].textContent = voteCount;
+    document.querySelectorAll(".vote-count")[currentIndex].textContent = voteCount;
   });
 });
 
@@ -92,6 +108,19 @@ document.querySelectorAll(".delete-button").forEach((button, index) => {
 
 //functionality for reply to be added 
 
-// document.queryselectroAll(".reply-button").foEach((button,index)=>{
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.reply-button')) {
+    var replyBtn = e.target;
+    var replyingbox = replyBtn.closest('.replying-box-outer, .replying-box-inner');
+    console.log(replyingbox);
+    const textarea = replyBtn.closest('.replying-box-outer, .replying-box-inner')?.querySelector('textarea');
+    const originalElement = document.querySelectorAll('.replied-box-self')[1];
+    console.log(originalElement);
+    originalElement.querySelector(":scope > .comment-box > div > p").textContent = textarea.value;
+    replyingbox.replaceWith(originalElement.cloneNode(true));
+    console.log('reply clicked');
+    console.log(textarea ? textarea.value : null);
+    
+  }
+});
 
-// })
