@@ -31,11 +31,11 @@ button{
     }
 }
 
-.reply-button{
+.reply-button, .update-button, .send-button {
     color:white;
 }
 
-.reply-button:hover{
+.reply-button:hover, .update-button:hover {
     background-color: hsl(239, 57%, 85%);
     color: white;
 }
@@ -58,7 +58,7 @@ button:hover {
     }
 }
 
-.comment-box, .replying-box-outer, .comment-box-self {
+.comment-box, .replying-box-outer, .comment-box-self, .new-comment-box {
     background-color: white;
     width: 50%;
     height: auto;
@@ -72,8 +72,11 @@ button:hover {
     margin-bottom: 10px;
     margin-top: 10px;
     box-sizing: border-box;
+}
 
-  
+.new-comment-box{
+    position: sticky;
+    bottom: 0;
 }
 
 .comment-box > div ,.comment-box-self > div {
@@ -188,24 +191,35 @@ button {
     box-sizing: border-box;
 }
 
-.reply-button {
-       border: 1px solid;
+body input{
+    width: 100% !important;
+}
+
+.reply-button, .update-button, .send-button {
+    border: 1px solid;
     border-radius: 4px;
     background-color: hsl(238, 40%, 52%);
     padding: 10px;
+    margin-left: auto;
+    flex: 0 0 70px;
+}
+
+.update-button {
+    flex: 0 0 0;
+    width: 70px;
 }
 
 .comment-box > img ,.comment-box-self > img {
    width: 3%;
 }
 
-.replied-box, .replied-box-self  {
+.replied-box, .replied-box-self , .replying-box-self {
    width: 50%;
     margin: auto;
     display: flex;
 }
 
-.replied-box > div:nth-child(1), .replied-box-self > div:nth-child(1) {
+.replied-box > div:nth-child(1), .replied-box-self > div:nth-child(1), .replying-box-self > div:nth-child(1) {
     width: 1px;
     margin-left: auto;
     box-shadow: 1px 0 0 hsl(211, 10%, 45%);
@@ -216,7 +230,7 @@ button {
     flex-direction: row;
 }
 
-.replied-box .comment-box, .replied-box-self .comment-box {
+.replied-box .comment-box, .replied-box-self .comment-box, .replying-box-self .comment-box {
    margin: 0;
     margin-left: auto;
     width: 93%;
@@ -227,14 +241,18 @@ body .replied-box:last-of-type .comment-box, body .replied-box-self:last-of-type
     margin-bottom: 0 ;
 }
 
-.replied-box .comment-box > div:last-of-type, .replied-box-self .comment-box > div:last-of-type {
+.replied-box .comment-box > div:last-of-type,
+ .replied-box-self .comment-box > div:last-of-type,
+  .replying-box-self .comment-box > div:last-of-type,
+    .comment-box-self > div:last-of-type,
+      .comment-box  > div:last-of-type {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.replied-box .comment-box > div:last-of-type div, .replied-box-self .comment-box > div:last-of-type div, .comment-box-self  > div:last-of-type div {
+.replied-box .comment-box > div:last-of-type div, .replied-box-self .comment-box > div:last-of-type div, .replying-box-self .comment-box > div:last-of-type div, .comment-box-self > div:last-of-type div  {
     display: flex;
 }
 
